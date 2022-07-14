@@ -13,14 +13,14 @@ public class QueryProcessor {
                     "writer in the English language and the world's pre-eminent dramatist.";
         } else if (query.toLowerCase().contains("name")) {
             return "Kevin";
-        } else if (query.toLowerCase().contains("largest")) {
+        } else if (query.contains("largest")) {
             int[] numbers = parseToInt(query);
             int max = 0;
             for (int n : numbers) {
                 max = Math.max(n, max);
             }
             return Integer.toString(max);
-        } else if (query.toLowerCase().contains("plus")) {
+        } else if (query.contains("plus")) {
             int[] numbers = parseToInt(query);
             int res = numbers[0] + numbers[1];
             return Integer.toString(res);
