@@ -29,11 +29,4 @@ class QueryProcessorTest {
 			fail("Your QueryProcessor should not be case sensitive.");
 		}
 	}
-
-	@Test
-	void largest() {
-		String actual = queryProcessor.process("largest: 2020, 2002, 5000, 6000");
-		assertEquals(6000, Integer.parseInt(actual));
-	}
-
 }
