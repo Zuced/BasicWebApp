@@ -23,6 +23,7 @@ public class QueryProcessor {
         } else if (query.toLowerCase().contains("plus")) {
             int[] numbers = parseToInt(query);
             int res = numbers[0] + numbers[1];
+            return Integer.toString(res);
         } else { // TODO extend the programm here
             return "";
         }
