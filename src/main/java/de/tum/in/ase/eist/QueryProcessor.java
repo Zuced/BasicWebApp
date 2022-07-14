@@ -14,15 +14,26 @@ public class QueryProcessor {
         } else if (query.toLowerCase().contains("name")) {
             return "Kevin";
         } else if (query.toLowerCase().contains("largest")) {
-            String[] list = query.split("[ ,]*|,[ ,]*");
+            int[] numbers = parseToInt(query);
             int max = 0;
-            for(String str : list) {
-                int number = Integer.parseInt(str);
-                max = Math.max(number, max);
+            for (int n : numbers) {
+                max = Math.max(n, max);
             }
             return Integer.toString(max);
+        } else if (query.toLowerCase().contains("plus")) {
+            int[] numbers = parseToInt(query);
+            int res = numbers[0] + numbers[1];
         } else { // TODO extend the programm here
             return "";
         }
+    }
+
+    private static int[] parseToInt(String query) {
+        String[] list = query.split("[ ,]*|,[ ,]*");
+        int[] numbers = new int[list.length];
+        for (int i = 0; i < list.length; i++) {
+            numbers[i] = Integer.parseInt(list[i]);
+        }
+        return numbers;
     }
 }
